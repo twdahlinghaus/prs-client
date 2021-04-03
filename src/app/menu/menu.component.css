@@ -1,0 +1,14 @@
+nav {
+    background-color: #ac9797;
+}
+ul {
+    margin: 0;
+}
+li {
+    display: inline-block;
+}
+a {
+    text-decoration: none;
+    color: black;
+    padding: 0 15px;
+}
