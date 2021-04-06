@@ -15,6 +15,8 @@ import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { BoolDisplayPipe } from './bool-display.pipe';
 import { SearchUserPipe } from './search-user.pipe';
+import { VendorComponent } from './vendor/vendor.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SearchUserPipe } from './search-user.pipe';
     UserCreateComponent,
     UserLoginComponent,
     BoolDisplayPipe,
-    SearchUserPipe
+    SearchUserPipe,
+    VendorComponent,
+    ProductComponent
 
   ],
   imports: [

@@ -17,11 +17,15 @@ export class SearchUserPipe implements PipeTransform {
         || user.username.toLowerCase().includes(searchCritera.toLowerCase())
         || user.firstName.toLowerCase().includes(searchCritera.toLowerCase())
         || user.lastName.toLowerCase().includes(searchCritera.toLowerCase())
+
         || (user.email != null &&
+            user.email.toLowerCase().includes(searchCritera.toLowerCase()))
+        
+        || (user.phoneNumber != null &&
             user.phoneNumber.toLowerCase().includes(searchCritera.toLowerCase()))
         ) {
-          selectedUsers.push(user);
-        }
+        selectedUsers.push(user);
+      }
     }
     return selectedUsers;
   }
