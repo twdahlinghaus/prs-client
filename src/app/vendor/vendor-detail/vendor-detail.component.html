@@ -1,0 +1,68 @@
+<app-menu></app-menu>
+<div>
+    <span>Vendor Detail</span>
+    <div>
+    <table class="table table=sm" *ngIf="vendor">
+        <tr>
+            <th>Id</th>
+            <td>
+                <input [(ngModel)]="vendor.id" type="number" disabled>
+            </td>
+        </tr>
+        <tr>
+            <th>Vendor Code</th>
+            <td>
+                <input [(ngModel)]="vendor.code" type="text" readonly>
+            </td>
+        </tr>
+        <tr>
+            <th>Vendor Name</th>
+            <td>
+                <input [(ngModel)]="vendor.name" type="text" readonly>
+            </td>
+        </tr>
+        <tr>
+            <th>Vendor Address</th>
+            <td>
+                <input [(ngModel)]="vendor.address" type="text" readonly>
+            </td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td>
+                <input [(ngModel)]="vendor.city" type="text" readonly>
+            </td>
+        </tr>
+        <tr>
+            <tr>
+                <th>State</th>
+                <td>
+                    <input [(ngModel)]="vendor.state" type="text" readonly>
+                </td>
+            </tr>
+            <tr>
+                <th>Zip</th>
+            <td>
+                <input [(ngModel)]="vendor.zip" type="text" readonly>
+            </td>
+        </tr>
+        <tr>
+            <tr>
+                <th>Phone</th>
+                <td>
+                    <input [(ngModel)]="vendor.phone" type="text" readonly>
+                </td>
+            </tr>
+            <tr>
+            <th>Email</th>
+            <td>
+                <input [(ngModel)]="vendor.email" type="text" readonly>
+            </td>
+        </tr>
+    </table>
+    <button (click)="edit()" class="btn btn-warning">Edit</button> |
+    <button (click)="toggleVerify()" class="btn btn-danger">Delete</button>
+    <span *ngIf="showVerify">
+        | <button (click)="delete()" class="btn btn-outline-danger">Delete for Real?</button></span>
+    </div>
+</div>
