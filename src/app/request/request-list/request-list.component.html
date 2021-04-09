@@ -32,8 +32,9 @@
         <td>{{request.dateNeeded}}</td>
         <td>{{request.dateSubmitted}}</td>
         <td>
-            <a routerLink="/products/detail/{{requestid}}">Detail</a> |
-            <a routerLink="/products/edit/{{request.id}}">Edit</a>
+            <a routerLink="/requests/detail/{{request.id}}">Detail</a> |
+            <a routerLink="/requests/edit/{{request.id}}">Edit</a>
+            <!-- <a routerLink="/requests/review-list/{{request.review-list.id}}">List</a> -->
         </td>
     </tr>
     </tbody>

@@ -1,1 +1,56 @@
-<p>request-edit works!</p>
+<app-menu></app-menu>
+<div>
+    <span>Request Detail</span>
+    <div>
+    <table class="table table=sm" *ngIf="request">
+            <th>Request Id</th>
+            <td>
+                <input *ngIf="request.id" [(ngModel)]="request.id" type="number" disabled>
+            </td>
+        <tr>
+            <th>Justification</th>
+            <td>
+                <input [(ngModel)]="request.justification" type="text">
+            </td>
+        </tr>
+        <tr>
+            <th>Rejection Reason</th>
+            <td>
+                <input [(ngModel)]="request.rejectionReason" type="text">
+            </td>
+        </tr>
+        <tr>
+            <th>Delivery Mode</th>
+            <td>
+                <input [(ngModel)]="request.deliveryMode" type="text">
+            </td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>
+                <input [(ngModel)]="request.status" type="text" disabled>
+            </td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td>
+                <input [(ngModel)]="request.total" type="number" disabled>
+            </td>
+            <tr>
+                <th>Date Needed</th>
+                <td>
+                    <input [(ngModel)]="request.dateNeeded" type="text">
+                </td>
+            </tr>
+            <tr>
+                <th>Date Submitted</th>
+                <td>
+                    <input [(ngModel)]="request.dateSubmitted" type="text" disabled>
+                </td>
+        </tr>
+    </table>
+    <button (click)="save()" class="btn btn-primary">Save</button> |
+    </div>
+</div>
+
+
