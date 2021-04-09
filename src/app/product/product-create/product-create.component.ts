@@ -1,7 +1,8 @@
 import { componentFactoryName } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Vendor } from 'src/app/vendor/vendor.class';
+import { VendorService } from 'src/app/vendor/vendor.service';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
 
@@ -13,10 +14,13 @@ import { ProductService } from '../product.service';
 export class ProductCreateComponent implements OnInit {
   
   product: Product = new Product();
+  vendors: Vendor[] = [];
 
   constructor(
 
     private prdctsvc: ProductService,
+    private vndrsvc: VendorService,
+    private route: ActivatedRoute,
     private router: Router
   ) { }
 
@@ -32,14 +36,20 @@ export class ProductCreateComponent implements OnInit {
       }
     );
   }
+    comptFn(a: Vendor, b:Vendor): boolean {
+      return a && b && a.id === b.id;
+  }
 
   ngOnInit(): void {
 
-    // let id = this.router.snapshot.params.id;
-
-    // comptFn(a: Vendor, b:Vendor): boolean {
-    //   return a && b a.id === b.id;
-    // }
-    }
-
+    this.vndrsvc.list().subscribe(
+      res => {
+        console.log("Vendors:", res);
+      this.vendors = res;
+      },
+      err => {
+        console.error(err);
+      }
+    );
+   }
 }

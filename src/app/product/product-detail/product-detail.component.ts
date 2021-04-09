@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Vendor } from 'src/app/vendor/vendor.class';
+import { VendorService } from 'src/app/vendor/vendor.service';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
 
@@ -11,11 +13,13 @@ import { ProductService } from '../product.service';
 export class ProductDetailComponent implements OnInit {
   
   product: Product = new Product();
+  vendor: Vendor = new Vendor();
   id: number = 0;
   showVerify: boolean = false;
 
   constructor(
     private prdctsvc: ProductService,
+    private vndrsvc: VendorService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -46,6 +50,17 @@ export class ProductDetailComponent implements OnInit {
       res => {
         console.log("Product:", res);
         this.product = res;
+      },
+      err => {
+        console.error(err);
+      }
+    );
+
+    let vendor = this.route.snapshot.params.id;
+    this.vndrsvc.get(+id).subscribe(
+      res => {
+        console.log("Vendor:", res);
+      this.vendor = res;
       },
       err => {
         console.error(err);

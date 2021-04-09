@@ -39,15 +39,15 @@
                 <input [(ngModel)]="product.photoPath" type="text">
             </td>
         </tr>
-        <!-- <tr>
+        <tr>
             <th>Select Vendor</th>
             <td>
-                <select [(ngModel)]="product.vendor">
+                <select [(ngModel)]="product.vendor" [compareWith]="comptFn">
                 <option *ngFor="let vendor of vendors"
-                [ngValue]={{vendor}}>{{vendor.name}}</option>
+                [ngValue]="vendor">{{vendor.name}}</option>
                 </select>
             </td>
-        </tr> -->
+        </tr>
     </table>
     <button (click)="save()" class="btn btn-success">Create</button>
     </div>

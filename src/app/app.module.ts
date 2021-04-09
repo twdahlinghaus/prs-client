@@ -23,6 +23,13 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { ProductDetailComponent} from './product/product-detail/product-detail.component';
 import { ProductCreateComponent} from './product/product-create/product-create.component';
+import { RequestListComponent } from './request/request-list/request-list.component';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
+import { RequestReviewItemsComponent } from './request/request-review-items/request-review-items.component';
+import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +52,13 @@ import { ProductCreateComponent} from './product/product-create/product-create.c
     ProductEditComponent,
     ProductDetailComponent,
     ProductCreateComponent,
+    RequestListComponent,
+    RequestCreateComponent,
+    RequestDetailComponent,
+    RequestEditComponent,
+    RequestLinesComponent,
+    RequestReviewItemsComponent,
+    RequestReviewListComponent,
     
 
   ],

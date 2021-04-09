@@ -10,6 +10,12 @@
             </td>
         </tr>
         <tr>
+            <th>Vendor Name</th>
+            <td>
+                <input *ngIf="product.vendor" [(ngModel)]="product.vendor.name" type="text" readonly>
+            </td>
+        </tr>
+        <tr>
             <th>Part Number</th>
             <td>
                 <input [(ngModel)]="product.partNumber" type="text" readonly>

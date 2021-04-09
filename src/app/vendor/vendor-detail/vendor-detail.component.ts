@@ -42,8 +42,8 @@ export class VendorDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let id = this.route.snapshot.params.id;
-    this.vndrsvc.get(+id).subscribe(
+    let vendor = this.route.snapshot.params.id;
+    this.vndrsvc.get(+vendor).subscribe(
       res => {
         console.log("Vendor:", res);
         this.vendor = res;
@@ -52,5 +52,6 @@ export class VendorDetailComponent implements OnInit {
         console.error(err);
       }
     );
+
   }
 }
