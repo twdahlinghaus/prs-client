@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Request } from '../request.class';
+import { RequestService } from '../request.service';
 
 @Component({
   selector: 'app-request-review-list',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestReviewListComponent implements OnInit {
 
-  constructor() { }
+  requests: Request [] = [];
+  searchCriteria: string = "";
+
+  constructor(
+    private rqstsvc: RequestService
+  ) { }
 
   ngOnInit(): void {
+    this.rqstsvc.list().subscribe(
+      res => {
+        console.log("Request", res)
+        this.requests = res as Request [];
+      },
+      err => {
+        console.error(err);
+      }
+    );
   }
 
 }

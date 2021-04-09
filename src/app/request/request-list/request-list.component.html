@@ -1,43 +1,42 @@
 <app-menu></app-menu>
 <div>
     <div>
-    <span>Request List</span> |
-    <span><a routerLink="/requests/create">Create</a></span> |
-    <span><input [(ngModel)]="searchCriteria" type="text" placeholder="Search"></span>
+        <span>Request List</span> |
+        <span><a routerLink="/requests/create">Create</a></span> |
+        <span><input [(ngModel)]="searchCriteria" type="text" placeholder="Search"></span>
     </div>
-    <table class = "table table-sm">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Description</th>
-            <th>Justification</th>
-            <th>Rejection Reason</th>
-            <th>Delivery Mode</th>
-            <th>Status</th>
-            <th>Total</th>
-            <th>Date Needed</th>
-            <th>Date Submitted</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let request of requests">
-        <td>{{request.id}}</td>
-        <td>{{request.description}}</td>
-        <td>{{request.justification}}</td>
-        <td>{{request.rejectionReason}}</td>
-        <td>{{request.deliveryMode}}</td>
-        <td>{{request.status}}</td>
-        <td>{{request.total}}</td>
-        <td>{{request.dateNeeded}}</td>
-        <td>{{request.dateSubmitted}}</td>
-        <td>
-            <a routerLink="/requests/detail/{{request.id}}">Detail</a> |
-            <a routerLink="/requests/edit/{{request.id}}">Edit</a>
-            <!-- <a routerLink="/requests/review-list/{{request.review-list.id}}">List</a> -->
-        </td>
-    </tr>
-    </tbody>
-    </table>  
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Justification</th>
+                <th>Rejection Reason</th>
+                <th>Delivery Mode</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Date Needed</th>
+                <th>Date Submitted</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let request of requests">
+                <td>{{request.id}}</td>
+                <td>{{request.description}}</td>
+                <td>{{request.justification}}</td>
+                <td>{{request.rejectionReason}}</td>
+                <td>{{request.deliveryMode}}</td>
+                <td>{{request.status}}</td>
+                <td>{{request.total | currency}}</td>
+                <td>{{request.dateNeeded}}</td>
+                <td>{{request.dateSubmitted}}</td>
+                <td>
+                    <a routerLink="/requests/detail/{{request.id}}">Detail</a> |
+                    <a routerLink="/requests/edit/{{request.id}}">Edit</a> |
+                    <a routerLink="/requests/request-lines/{{request.id}}">Lines</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-

@@ -1,4 +1,5 @@
 import { DatePipe } from "@angular/common";
+import { User } from "../user/user.class";
 
 export class Request {
     id: number = 0;
@@ -10,4 +11,5 @@ export class Request {
     total: number = 0;
     dateNeeded: string = '';
     submittedDate: string = '';
+    user: User = null;
 }

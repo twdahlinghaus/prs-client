@@ -19,6 +19,11 @@ import { RequestCreateComponent } from './request/request-create/request-create.
 import { RequestListComponent } from './request/request-list/request-list.component';
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
+import { RequestlinesCreateComponent} from './requestlines/requestlines-create/requestlines-create.component';
+import { RequestlinesEditComponent } from './requestlines/requestlines-edit/requestlines-edit.component';
+import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
+import { RequestReviewItemsComponent } from './request/request-review-items/request-review-items.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -41,6 +46,13 @@ const routes: Routes = [
   { path: 'requests/list', component: RequestListComponent},
   { path: 'requests/detail/:id', component: RequestDetailComponent},
   { path: 'requests/edit/:id', component: RequestEditComponent},
+  { path: 'requests/request-lines/:id', component: RequestLinesComponent},
+  { path: 'requestlines/requestlines-create', component: RequestlinesCreateComponent},
+  { path: 'requestlines/requestlines-edit/:id', component: RequestlinesEditComponent},
+  { path: 'requests/request-review-list', component: RequestReviewListComponent},
+  { path: 'requests/request-review-items/:id', component: RequestReviewItemsComponent},
+  
+
 
   { path: '**', component: HomeComponent }
 

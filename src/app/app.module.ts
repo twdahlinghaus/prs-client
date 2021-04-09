@@ -30,6 +30,8 @@ import { RequestEditComponent } from './request/request-edit/request-edit.compon
 import { RequestLinesComponent } from './request/request-lines/request-lines.component';
 import { RequestReviewItemsComponent } from './request/request-review-items/request-review-items.component';
 import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
+import { RequestlinesEditComponent } from './requestlines/requestlines-edit/requestlines-edit.component';
+import { RequestlinesCreateComponent } from './requestlines/requestlines-create/requestlines-create.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { RequestReviewListComponent } from './request/request-review-list/reques
     RequestLinesComponent,
     RequestReviewItemsComponent,
     RequestReviewListComponent,
+    RequestlinesEditComponent,
+    RequestlinesCreateComponent,
     
 
   ],
