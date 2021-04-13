@@ -28,7 +28,7 @@ export class ProductCreateComponent implements OnInit {
     console.log("B4 Change", this.product);
     this.prdctsvc.change(this.product).subscribe(
       res => {
-        console.log("Edit success!");
+        console.log("Save success!");
         this.router.navigateByUrl("/products/list");
       },
       err => {

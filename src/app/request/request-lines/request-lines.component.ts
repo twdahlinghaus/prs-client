@@ -44,6 +44,6 @@ export class RequestLinesComponent implements OnInit {
         console.log("Request Lines:", res);
         this.requestlines = res;
       }
-    )
+    );
   }
 }

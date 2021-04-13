@@ -20,6 +20,9 @@ export class RequestService {
   get(id:number): Observable<Request> {
     return this.http.get(`${this.baseurl}${id}`) as Observable<Request>;
   }
+  getreviews(id:number): Observable<Request[]> {
+    return this.http.get(`${this.baseurl}list-review/${id}`) as Observable<Request[]>;
+  }
   create(request: Request): Observable<Request> {
     return this.http.post(`${this.baseurl}`, request) as Observable<Request>;
   }

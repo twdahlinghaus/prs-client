@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router} from '@angular/router';
+import { Product } from 'src/app/product/product.class';
+import { ProductService } from 'src/app/product/product.service';
 import { Requestline } from '../requestlines.class';
 import { RequestlinesService } from '../requestlines.service'
 
@@ -11,9 +13,11 @@ import { RequestlinesService } from '../requestlines.service'
 })
 export class RequestlinesEditComponent implements OnInit {
   requestline: Requestline = null;
+  products: Product [] = [];
 
   constructor(
     private rqstlnssvc: RequestlinesService,
+    private prdctsvc: ProductService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -31,7 +35,21 @@ export class RequestlinesEditComponent implements OnInit {
     );
   }
 
+  comptFn(a: Product, b: Product): boolean {
+    return a && b && a.id === b.id;
+  }
+
   ngOnInit(): void {
+    this.prdctsvc.list().subscribe(
+      res => {
+        console.log (res);
+        this.products = res;
+      },
+      err => {
+        console.error(err);
+      }
+    );
+    
     let id = this.route.snapshot.params.id;
     this.rqstlnssvc.get(+id).subscribe(
       res => {

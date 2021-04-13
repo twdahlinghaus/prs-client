@@ -6,15 +6,18 @@
         <tr>
             <th>Id</th>
             <td>
-                <input [(ngModel)]="requestline.requestId" type="text">
+                <input [(ngModel)]="requestline.requestId" type="text" disabled>
             </td>
         </tr>
         <tr>
-            <th>Product</th>
-            <td>
-                <input [(ngModel)]="requestline.product" type="text">
-            </td>
-        </tr>
+            <th>Select Product</th>
+                <td>
+                    <select [(ngModel)]="requestline.product" [compareWith]="comptFn">
+                    <option *ngFor="let product of products"
+                    [ngValue]="product">{{product.name}}</option>
+                    </select>
+                </td>
+            </tr>
         <tr>
             <th>Quantity</th>
             <td>

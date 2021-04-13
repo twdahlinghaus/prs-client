@@ -21,10 +21,13 @@ export class RequestCreateComponent implements OnInit {
     console.log("B4 Change", this.request);
     this.rqstsvc.change(this.request).subscribe(
       res => {
-        console.log("Edit success!");
-        this.router.navigateByUrl("/request/list");
+        console.log("Save success!");
+        this.router.navigateByUrl("/requests/list");
+      },
+      err => {
+        console.error(err);
       }
-    )
+    );
   }  
 
   ngOnInit(): void {
