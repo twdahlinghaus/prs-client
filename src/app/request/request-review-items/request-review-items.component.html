@@ -49,7 +49,11 @@
             </table>  
     </div>
     <div>
-        <a routerLink="/requestlines/requestlines/">Approve</a> |
-        <a routerLink="/requestlines/">Reject</a>
+        <a routerLink="Approve()">Approve</a> |
+        <a routerLink="Reject()">Reject</a>
+        <span *ngIf="showReject">
+            <input [(ngModel)]= "request.rejectionReason" type="text" placeholder="Enter Rejection Reason">
+            <a routerLink="verify(request.id)">REJECT!!</a>
+        </span>
     </div>
 </div>

@@ -7,6 +7,7 @@ import { Request } from './request.class';
   providedIn: 'root'
 })
 export class RequestService {
+  
 
   baseurl: string = "http://localhost:8080/api/requests/";
 
@@ -31,5 +32,14 @@ export class RequestService {
   }
   remove(request: Request): Observable<Request> {
     return this.http.delete(`${this.baseurl}${request.id}`) as Observable<Request>;
+  }
+  approve(request: Request): Observable<Request> {
+    return this.http.put(`${this.baseurl}/approve`, Request) as Observable<Request>;
+  }
+  reject(request: Request): Observable<Request> {
+    return this.http.put(`${this.baseurl}/reject`, Request) as Observable<Request>;
+  }
+  review(request: Request): Observable<Request> {
+    return this.http.put(`${this.baseurl}/submit-review`, Request) as Observable<Request>;
   }
 }

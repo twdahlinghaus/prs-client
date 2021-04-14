@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RequestService } from 'src/app/request/request.service';
+import { SystemService } from 'src/app/system.service';
+import { User } from 'src/app/user/user.class';
 import { Request } from '../request.class';
 
 @Component({
@@ -10,15 +12,18 @@ import { Request } from '../request.class';
 })
 export class RequestCreateComponent implements OnInit {
   request: Request = new Request();
+  user: User = new User();
 
   constructor(
     private rqstsvc: RequestService,
     private route: ActivatedRoute,
+    private syssvc: SystemService,
     private router: Router
   ) { }
 
   save(): void {
     console.log("B4 Change", this.request);
+    this.request.user = this.user;
     this.rqstsvc.change(this.request).subscribe(
       res => {
         console.log("Save success!");
@@ -31,6 +36,7 @@ export class RequestCreateComponent implements OnInit {
   }  
 
   ngOnInit(): void {
+    
   }
 
 }
