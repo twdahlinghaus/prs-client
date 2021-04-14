@@ -23,8 +23,8 @@ export class RequestCreateComponent implements OnInit {
 
   save(): void {
     console.log("B4 Change", this.request);
-    this.request.user = this.user;
-    this.rqstsvc.change(this.request).subscribe(
+    // this.request.user = this.user;
+    this.rqstsvc.create(this.request).subscribe(
       res => {
         console.log("Save success!");
         this.router.navigateByUrl("/requests/list");
@@ -36,6 +36,7 @@ export class RequestCreateComponent implements OnInit {
   }  
 
   ngOnInit(): void {
+    this.request.user=this.syssvc.loggedInUser;
     
   }
 

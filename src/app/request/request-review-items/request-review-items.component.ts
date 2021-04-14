@@ -54,6 +54,15 @@ export class RequestReviewItemsComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    let id = this.route.snapshot.params.id;
+
+    this.rqstsvc.get(+id).subscribe(
+      res => {
+        console.log("Current request:", res);
+        this.request = res;
+      }
+    )
+    
     console.log(this.systsvc.loggedInUser);
     this.rqstsvc.getreviews(this.systsvc.loggedInUser.id).subscribe(
       res => {
@@ -64,12 +73,12 @@ export class RequestReviewItemsComponent implements OnInit {
         console.error(err);
       }
     );
-    // this.rqstlnssvc.getlinesforrequest(+id).subscribe(
-    //   res => {
-    //     console.log("Request Line:", res);
-    //     this.requestlines = res;
-    //   }
-    // );
+    this.rqstlnssvc.getlinesforrequest(+id).subscribe(
+      res => {
+        console.log("Request Line:", res);
+        this.requestlines = res;
+      }
+    );
   }
 
 }

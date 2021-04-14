@@ -3,7 +3,7 @@
     <div>
     <span>Request Lines Review</span>
     </div>
-    <table class = "table table-sm">
+    <table *ngIf="request" class = "table table-sm">
     <thead>
         <tr>
             <th>Id</th>
@@ -14,7 +14,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let request of requests">
+        <tr> 
         <td>{{request.id}}</td>
         <td>{{request.description}}</td>
         <td>{{request.status}}</td>
@@ -49,11 +49,11 @@
             </table>  
     </div>
     <div>
-        <a routerLink="Approve()">Approve</a> |
-        <a routerLink="Reject()">Reject</a>
+        <button (click)="approve()" class= "btn btn-success">Approve</button> |
+        <button (click)="reject()" class= "btn btn-warning">Reject</button>
         <span *ngIf="showReject">
             <input [(ngModel)]= "request.rejectionReason" type="text" placeholder="Enter Rejection Reason">
-            <a routerLink="verify(request.id)">REJECT!!</a>
+            <button (click)="verify()" class="btn btn-danger">REJECT!!</button>
         </span>
     </div>
 </div>

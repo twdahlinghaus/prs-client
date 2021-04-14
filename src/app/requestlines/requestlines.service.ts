@@ -28,6 +28,6 @@ export class RequestlinesService {
     return this.http.delete(`${this.baseurl}${requestline.id}`) as Observable<Requestline>;
   }
   getlinesforrequest(id:number): Observable<Requestline[]> {
-    return this.http.get(`${this.baseurl}/lines-for-pr/${id}`) as Observable<Requestline[]>;
+    return this.http.get(`${this.baseurl}lines-for-pr/${id}`) as Observable<Requestline[]>;
   }
 }

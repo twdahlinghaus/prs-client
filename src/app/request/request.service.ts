@@ -34,12 +34,12 @@ export class RequestService {
     return this.http.delete(`${this.baseurl}${request.id}`) as Observable<Request>;
   }
   approve(request: Request): Observable<Request> {
-    return this.http.put(`${this.baseurl}/approve`, Request) as Observable<Request>;
+    return this.http.put(`${this.baseurl}approve`, request) as Observable<Request>;
   }
   reject(request: Request): Observable<Request> {
-    return this.http.put(`${this.baseurl}/reject`, Request) as Observable<Request>;
+    return this.http.put(`${this.baseurl}reject`, request) as Observable<Request>;
   }
   review(request: Request): Observable<Request> {
-    return this.http.put(`${this.baseurl}/submit-review`, Request) as Observable<Request>;
+    return this.http.put(`${this.baseurl}submit-review`, request) as Observable<Request>;
   }
 }

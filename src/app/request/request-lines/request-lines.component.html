@@ -22,7 +22,7 @@
         <td>{{request.total | currency}}</td>
         <td>{{request.user.username}}</td>
         <td>
-            <a routerLink="/requests/request-review-items/{{request.id}}">Review</a>
+            <button (click)="review()" class="btn btn-primary">Review</button>
         </td>
     </tr>
     </tbody>

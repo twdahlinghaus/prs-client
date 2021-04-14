@@ -26,14 +26,23 @@ export class RequestLinesComponent implements OnInit {
     private rqstlnssvc: RequestlinesService
   ) { }
 
-    //delete
+  review(): void {
+    this.rqstsvc.review(this.request).subscribe(
+      res => {
+        console.log("Review success!");
+      },
+      err => {
+        console.error(err);
+      }
+    )
+  }
 
   ngOnInit(): void {
     let id = this.route.snapshot.params.id;
     this.rqstsvc.get(+id).subscribe(
       res => {
         console.log("Request Line:", res);
-        this.request = res;
+        this.request = res as Request;
       },
       err => {
         console.error(err);
